@@ -3,16 +3,19 @@
     let classX = 'X';
     let classO = 'O';
     let currentX;
+    let createTableBtn = document.getElementById('btn-create');
+    let emptyNumFieldsBtn = document.getElementById('btn-empty');
+    let startGameBtn = document.getElementById('btn-start');
     let messageBox = document.getElementById("table msg-box-turn");
     let winnerMessageBox = document.getElementById("table msg-box-winner");
     let drawMessageBox = document.getElementById("table msg-box-draw");
     let tableDiv = document.getElementById("table-div");
-    let playerXNameInput;
-    let playerONameInput;
+    let playerXNameInput = document.getElementById('playerX-name');
+    let playerONameInput = document.getElementById('playerO-name');
+    let rowsInput = document.getElementById('rows');
+    let colsInput = document.getElementById('cols');
     let playerXName;
-    let playerOName;
-    let rowsInput;
-    let colsInput;
+    let playerOName; 
     let rows;
     let cols;
     let cellArray = [];
@@ -102,7 +105,6 @@
         let currentClass = currentX ? classX : classO;
 
         markCell(clickedCell, currentClass);
-
         !IsWinning ? switchPlayers() : (clearPlayersTurnMsgBox(), freezeBoardAfterWinning());
         playersTurnMessage()
     }
@@ -262,7 +264,6 @@
         setTimeout(() => {
             messageBox.innerHTML = '';
         }, 0);
-
     }
 
     function clearMessages() {
@@ -279,13 +280,6 @@
     }
 
     window.addEventListener('load', () => {
-        let createTableBtn = document.getElementById('btn-create');
-        let emptyNumFieldsBtn = document.getElementById('btn-empty');
-        let startGameBtn = document.getElementById('btn-start');
-        rowsInput = document.getElementById('rows');
-        colsInput = document.getElementById('cols');
-        playerXNameInput = document.getElementById('playerX-name');
-        playerONameInput = document.getElementById('playerO-name');
         rowsInput.addEventListener('input', readSizeInput);
         colsInput.addEventListener('input', readSizeInput);
         emptyNumFieldsBtn.addEventListener('click', emptyNumFields);
