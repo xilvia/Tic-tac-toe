@@ -96,7 +96,7 @@
     function endGame(message) {
         message === 'X' || message === 'O' ?
             winnerMessageBox.innerHTML = `Player ${message === 'X' ? (playerXName ? playerXName : message ) : 
-        (playerOName ? playerOName : message )}'s win!` :
+        (playerOName ? playerOName : message )}'s won!` :
             drawMessageBox.innerHTML = `${message}`;
     }
 
