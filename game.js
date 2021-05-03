@@ -43,7 +43,7 @@
         playerXName = playerXNameInput.value;
         playerOName = playerONameInput.value;
 
-        inputNames(playerXName, playerOName);
+        inputNames();
     }
 
     function createTable() {
