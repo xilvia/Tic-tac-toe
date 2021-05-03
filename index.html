@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="game.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="settings container">
+                <label for="rows">Rows
+                    <input type="number" class="settings input rows" id="rows" min="10" max="20" /></label>
+                <label for="cols">Cols
+                    <input type="number" class="settings input cols" id="cols" min="10" max="20" /></label>
+                <button class="settings btn btn-empty" id="btn-empty" onclick="emptyNumFields()">
+                    Resize
+                </button>
+                <button class="settings btn btn-create" id="btn-create" onclick="createTable()">
+                    Create board
+                </button>
+                <br>
+                <br />
+                <label for="playerX">Player X name
+                    <input type="text" class="settings input playerX-name" id="playerX-name" /></label>
+                <br>
+                <br>
+                <label for="playerO">Player O name
+                    <input type="text" class="settings input playerO-name" id="playerO-name" /></label>
+                <div class="settings msg-box" id="settings msg-box"></div>
+            </div>
+            <div class="table container">
+                <button class="table btn btn-start" id="btn-start" onclick="startGame()">
+                    Start Game
+                </button>
+                <div class="table msg-box turn" id="table msg-box-turn"></div>
+                <div class="table msg-box winner" id="table msg-box-winner"></div>
+                <div class="table msg-box draw" id="table msg-box-draw"></div>
+                <div class="table div" id="table-div"></div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="game.js"></script>
+    </body>
+
+</html>
