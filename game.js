@@ -77,7 +77,6 @@
 
         playerXNameInput.disabled = true;
         playerONameInput.disabled = true;
-        currentX = false;
         IsWinning = false;
         cellArray = document.querySelectorAll("td");
         cellArray = Array.from(cellArray);
