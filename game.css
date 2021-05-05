@@ -11,6 +11,16 @@ body {
     margin: 0;
 }
 
+td {
+    background-color: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+}
+
 .settings.container {
     background-color: #bfcfdf;
     margin-top: 40px;
@@ -51,16 +61,6 @@ body {
     justify-content: center;
     margin-top: 30px;
     width: 100vw;
-}
-
-td {
-    background-color: #f9f9f9;
-    border: 1px solid #dcdcdc;
-    border-radius: 3px;
-    cursor: pointer;
-    text-align: center;
-    width: 45px;
-    height: 45px;
 }
 
 .table.msg-box {
