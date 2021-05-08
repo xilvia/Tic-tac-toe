@@ -20,7 +20,7 @@
     let cols;
     let cellArray = [];
     let tableIsReady = false;
-    let IsWinning = false;
+    let isWinning = false;
 
     function inputNames() {
         playerXName = playerXNameInput.value && playerXNameInput.value !== null ||
@@ -77,7 +77,7 @@
 
         playerXNameInput.disabled = true;
         playerONameInput.disabled = true;
-        IsWinning = false;
+        isWinning = false;
         cellArray = document.querySelectorAll("td");
         cellArray = Array.from(cellArray);
 
@@ -104,7 +104,7 @@
         let currentClass = currentX ? classX : classO;
 
         markCell(clickedCell, currentClass);
-        !IsWinning ? switchPlayers() : (clearPlayersTurnMsgBox(), freezeBoardAfterWinning());
+        !isWinning ? switchPlayers() : (clearPlayersTurnMsgBox(), freezeBoardAfterWinning());
         playersTurnMessage()
     }
 
@@ -141,7 +141,7 @@
                     cellArray[i + 3],
                     cellArray[i + 4]);
 
-                IsWinning = true;
+                isWinning = true;
 
                 endGame(currentClass);
             } else {
@@ -169,7 +169,7 @@
                     cellArray[i + cols * 3],
                     cellArray[i + cols * 4]);
 
-                IsWinning = true;
+                isWinning = true;
 
                 endGame(currentClass);
             } else {
@@ -197,7 +197,7 @@
                     cellArray[i + cols * 3 - 3],
                     cellArray[i + cols * 4 - 4])
 
-                IsWinning = true;
+                isWinning = true;
 
                 endGame(currentClass);
             } else {
@@ -225,7 +225,7 @@
                     cellArray[i + cols * 3 + 3],
                     cellArray[i + cols * 4 + 4])
 
-                IsWinning = true;
+                isWinning = true;
 
                 endGame(currentClass);
             } else {
