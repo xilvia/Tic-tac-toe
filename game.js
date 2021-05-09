@@ -1,19 +1,19 @@
 (function () {
 
-    let classX = 'X';
-    let classO = 'O';
+    const classX = 'X';
+    const classO = 'O';
     let currentX;
-    let createTableBtn = document.getElementById('btn-create');
-    let emptyNumFieldsBtn = document.getElementById('btn-empty');
-    let startGameBtn = document.getElementById('btn-start');
-    let messageBox = document.getElementById("table msg-box-turn");
-    let winnerMessageBox = document.getElementById("table msg-box-winner");
-    let drawMessageBox = document.getElementById("table msg-box-draw");
-    let tableDiv = document.getElementById("table-div");
-    let playerXNameInput = document.getElementById('playerX-name');
-    let playerONameInput = document.getElementById('playerO-name');
-    let rowsInput = document.getElementById('rows');
-    let colsInput = document.getElementById('cols');
+    const createTableBtn = document.getElementById('btn-create');
+    const emptyNumFieldsBtn = document.getElementById('btn-empty');
+    const startGameBtn = document.getElementById('btn-start');
+    const messageBox = document.getElementById("table msg-box-turn");
+    const winnerMessageBox = document.getElementById("table msg-box-winner");
+    const drawMessageBox = document.getElementById("table msg-box-draw");
+    const tableDiv = document.getElementById("table-div");
+    const playerXNameInput = document.getElementById('playerX-name');
+    const playerONameInput = document.getElementById('playerO-name');
+    const rowsInput = document.getElementById('rows');
+    const colsInput = document.getElementById('cols');
     let playerXName;
     let playerOName; 
     let rows;
@@ -23,8 +23,12 @@
     let isWinning = false;
 
     function inputNames() {
-        playerXName = playerXNameInput.value && playerXNameInput.value !== null? playerXNameInput.value : classX;
-        playerOName = playerONameInput.value && playerONameInput.value !== null? playerONameInput.value : classO;
+        const pattern = /[a-záéíóúöőüűA-Z]+$/ 
+        const resultX = pattern.exec(playerXNameInput.value);
+        const resultO = pattern.exec(playerONameInput.value);
+
+        playerXName = playerXNameInput.value && resultX !== null? playerXNameInput.value : classX;
+        playerOName = playerONameInput.value && resultO !== null? playerONameInput.value : classO;
     }
 
     function emptyNumFields() {
@@ -46,7 +50,7 @@
 
     function createTable() {
         tableIsReady ? deleteTable() : '';
-        readSizeInput()
+        readSizeInput();
 
         rows = rows || 10;
         cols = cols || 10;
