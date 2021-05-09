@@ -23,10 +23,8 @@
     let isWinning = false;
 
     function inputNames() {
-        playerXName = playerXNameInput.value && playerXNameInput.value !== null ||
-            playerXNameInput.value !== '' ? playerXNameInput.value : classX;
-        playerOName = playerONameInput.value && playerONameInput.value !== null ||
-            playerONameInput.value !== '' ? playerONameInput.value : classO;
+        playerXName = playerXNameInput.value && playerXNameInput.value !== null? playerXNameInput.value : classX;
+        playerOName = playerONameInput.value && playerONameInput.value !== null? playerONameInput.value : classO;
     }
 
     function emptyNumFields() {
@@ -104,8 +102,8 @@
         let currentClass = currentX ? classX : classO;
 
         markCell(clickedCell, currentClass);
-        !isWinning ? switchPlayers() : (clearPlayersTurnMsgBox(), freezeBoardAfterWinning());
-        playersTurnMessage()
+        !isWinning ? (switchPlayers(), playersTurnMessage()) : (clearPlayersTurnMsgBox(), freezeBoardAfterWinning());
+        
     }
 
     function markCell(clickedCell, currentClass) {
@@ -260,9 +258,7 @@
     }
 
     function clearPlayersTurnMsgBox() {
-        setTimeout(() => {
             messageBox.innerHTML = '';
-        }, 0);
     }
 
     function clearMessages() {
